@@ -1,28 +1,28 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { Formik, Field, Form, ErrorMessage, FieldArray } from "formik";
-import Select from "react-select";
-import _ from "lodash";
-import MultiSelect from "./MultiSelect";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Formik, Field, Form, ErrorMessage, FieldArray } from 'formik';
+import Select from 'react-select';
+import _ from 'lodash';
+import MultiSelect from './MultiSelect';
 
 const initialValues = {
-  dimensionFilter: []
+  dimensionFilter: [],
 };
 
 const options = [
-  { value: false, label: "Ascending" },
-  { value: true, label: "Descending" }
+  { value: false, label: 'Ascending' },
+  { value: true, label: 'Descending' },
 ];
 const ordertype = [
-  { value: "ALPHANUMERIC", label: "alpha" },
-  { value: "NUMERIC", label: "numeric" },
-  { value: "CASE_INSENSITIVE_ALPHANUMERIC", label: "alpha (ignore case)" }
+  { value: 'ALPHANUMERIC', label: 'alpha' },
+  { value: 'NUMERIC', label: 'numeric' },
+  { value: 'CASE_INSENSITIVE_ALPHANUMERIC', label: 'alpha (ignore case)' },
 ];
 console.log(options);
 
 const InviteFriends = () => (
   <div>
-    <h1>Invite friends</h1>
+    <h1>Multi Select Form</h1>
     <Formik
       initialValues={initialValues}
       onSubmit={async (values) => {
@@ -57,9 +57,9 @@ const InviteFriends = () => (
                             isMulti={true}
                             component={MultiSelect}
                             options={[
-                              { value: "one", label: "One" },
-                              { value: "two", label: "Two" },
-                              { value: "three", label: "Three" }
+                              { value: 'one', label: 'One' },
+                              { value: 'two', label: 'Two' },
+                              { value: 'three', label: 'Three' },
                             ]}
                           />
                           {/* <Field
@@ -146,18 +146,18 @@ const InviteFriends = () => (
                 <button
                   type="button"
                   className="secondary"
-                  onClick={() => push({ filter: { fieldName: "", value: [] } })}
+                  onClick={() => push({ filter: { fieldName: '', value: [] } })}
                 >
                   Add filter
                 </button>
               </div>
             )}
           </FieldArray>
-          <button type="submit">Invite</button>
+          <button type="submit">Submit</button>
         </Form>
       )}
     </Formik>
   </div>
 );
 
-ReactDOM.render(<InviteFriends />, document.getElementById("root"));
+ReactDOM.render(<InviteFriends />, document.getElementById('root'));
